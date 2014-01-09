@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<title>UpdateData</title>
+	<script src="js/jquery/jquery-1.10.2.min.js" type="text/javascript"></script>
+	<style>
+	/* General Styles */
+		
+	</style>
+</head>
+<body>
+
+
+<!--Javascript start-->
+<script type="text/javascript">
+
+window.onload = function ()
+{
+	//initial poll of data
+	graphPoller.getDataOnce();
+	//poll loop initialize
+	graphPoller.init();
+} 
+
+var graphPoller = {
+	// starting interval - 5 seconds
+	interval: 5000,
+
+	// kicks off the setTimeout
+	init: function(){
+	   setTimeout(
+		   $.proxy(this.getData, this), // ensures 'this' is the poller obj inside getData, not the window object
+		   this.interval
+	   );
+	},
+
+	// the following function will run each interval
+	getData: function(){
+	   self=this;
+	   self.init();
+	},
+
+	// the following function is called before the loop starts 
+	getDataOnce: function(){
+	   
+	}
+
+   // handle errors
+   // ..nothing
+};
+
+
+
+</script>
+</body>
+</html>
