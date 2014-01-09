@@ -26,7 +26,7 @@ window.onload = function ()
 
 var graphPoller = {
 	// starting interval - 5 seconds
-	interval: 5000,
+	interval: 2000,
 
 	// kicks off the setTimeout
 	init: function(){
@@ -38,13 +38,14 @@ var graphPoller = {
 
 	// the following function will run each interval
 	getData: function(){
+		alert("Kör med intervall");
 	   self=this;
 	   self.init();
 	},
 
 	// the following function is called before the loop starts 
 	getDataOnce: function(){
-	   
+	   alert("Körs direkt");
 	}
 
    // handle errors
