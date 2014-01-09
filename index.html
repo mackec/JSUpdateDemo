@@ -28,6 +28,11 @@ var graphPoller = {
 	// starting interval - 5 seconds
 	interval: 2000,
 
+	updategraph: function() { 
+		// ADD CODE HERE to run on interval
+		alert("updating graph");
+	},
+	
 	// kicks off the setTimeout
 	init: function(){
 	   setTimeout(
@@ -38,14 +43,15 @@ var graphPoller = {
 
 	// the following function will run each interval
 	getData: function(){
-		alert("Kör med intervall");
 	   self=this;
+	   this.updategraph();
 	   self.init();
 	},
 
 	// the following function is called before the loop starts 
 	getDataOnce: function(){
-	   alert("Körs direkt");
+	   self=this;
+	   this.updategraph();
 	}
 
    // handle errors
